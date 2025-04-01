@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Friendly Office Wellness Check 🌿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            animation: backgroundAnimation 10s infinite alternate;
+            transition: all 0.3s ease;
+        }
+
+        /* Animation for background */
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+            100% { background: linear-gradient(135deg, #fed6e3, #a8edea); }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.6em;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            font-size: 1.4em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 25px;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #45a049;
+        }
+
+        /* Hidden content toggle */
+        .hidden {
+            display: none;
+        }
+
+        /* Add a smooth fade-in animation for the message */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Step list styling */
+        ol {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        ol li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        /* Media Queries for mobile responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            p {
+                font-size: 1.1em;
+            }
+            .button {
+                font-size: 1.2em;
+                padding: 15px 25px;
+            }
+        }
+
+        /* Further media query for very small screens */
+        @media (max-width: 400px) {
+            .button {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+            ol li {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🌿 Friendly Office Wellness Check 🌿</h1>
+    <p>Hey there! Just a quick check-in to remind you to take a short break and refresh your energy. 😊</p>
+    <p>Date: <span id="date"></span></p>
+    
+    <p>Here are a few simple steps to help you recharge:</p>
+    <ol>
+        <li>Stand up and stretch—your body will thank you! 🏋️‍♂️</li>
+        <li>Take a deep breath and enjoy a moment of mindfulness. 🌸</li>
+        <li>Grab a coffee, tea, or your favorite snack. ☕🍵</li>
+        <li>Send a kind message to a colleague—spread some positivity! 💬</li>
+    </ol>
+
+    <button class="button" onclick="showMessage()">Complete Wellness Check</button>
+    
+    <div id="message" class="hidden">
+        <h2>Great Job! 🎉</h2>
+        <p>Taking small breaks throughout the day can significantly boost productivity, mood, and well-being. Keep up the great work! 🚀</p>
+        <p>Wishing you an amazing and productive day ahead! 🌟</p>
+    </div>
+
+    <script>
+        // Display current date
+        document.getElementById("date").textContent = new Date().toDateString();
+
+        // Toggle visibility of the wellness message
+        function showMessage() {
+            document.getElementById('message').classList.toggle('hidden');
+            // Smooth scroll to the message section when shown
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        // Animation for button hover effect (scaling and color change)
+        document.querySelector('.button').addEventListener('mouseover', function() {
+            this.style.transition = 'transform 0.2s, background-color 0.3s';
+            this.style.transform = 'scale(1.1)';
+        });
+        document.querySelector('.button').addEventListener('mouseout', function() {
+            this.style.transition = 'transform 0.2s, background-color 0.3s';
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
